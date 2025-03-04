@@ -6,7 +6,7 @@ import '@aws-amplify/ui-react-storage/styles.css';
 
 export const { StorageBrowser } = createStorageBrowser({
    config: createManagedAuthAdapter({
-    credentialsProvider: async (options?: { forceRefresh?: boolean }) => {
+    credentialsProvider: async (_options?: { forceRefresh?: boolean }) => {
       // return your credentials object
       return {
         credentials: {
@@ -18,10 +18,11 @@ export const { StorageBrowser } = createStorageBrowser({
       }
     },
     // AWS `region` and `accountId` of the S3 Access Grants Instance.
+    
     region: 'us-east-1',
     accountId: '471112784336',
     // call `onAuthStateChange` when end user auth state changes 
     // to clear sensitive data from the `StorageBrowser` state
-    registerAuthListener: (onAuthStateChange) => {},
+    registerAuthListener: (_onAuthStateChange) => {},
   })
 });
